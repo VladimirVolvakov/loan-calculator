@@ -6,7 +6,61 @@
     <title>Loan calculator</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
-  <body>
+  <body class="bg-secondary">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body text-center mt-5">
+                    <h1 class="heading display-5 pb-3">Loan Calculator</h1>
+                    <form id="calculator-form">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Loan amount</span>
+                                <input type="number" id="amount" class="form-control" placeholder="Enter loan amount">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"> Bank interest, %</span>
+                                <input type="number" id="interest" class="form-control" placeholder="Enter the loan rate">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Loan term</span>
+                                <input type="number" id="years" class="form-control" placeholder="Enter the loan repayment period (years)">
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input type="submit" class="btn btn-secondary btn-lg" value="Calculate">
+                        </div>
+                    </form>
+                    <!-- Results -->
+                    <div id="results">
+                        <h3>Results</h3>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Monthly payment</span>
+                                <input type="number" id="monthly-payment" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Total payment</span>
+                                <input type="number" id="total-payment" class="form-control" disabled>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Total interest</span>
+                                <input type="number" id="total-interest" class="form-control" disabled>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
     <script src="app.js"></script>
