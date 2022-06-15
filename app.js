@@ -2,10 +2,25 @@
 const calculateButton = document.querySelector('#calculate-button');
 
 // Event listener for Calculate button:
-calculateButton.addEventListener('click', getResults);
+calculateButton.addEventListener('click', (event) => {
+    // Get access to div#loader & div#results:
+    const loader = document.querySelector('#loader');
+    const results = document.querySelector('#results');
+    // Make div#loader visible:
+    loader.style.display = 'block';
+    // Get calculation results:
+    getResults();
+    // Hide loader in 0.2 seconds:
+    setTimeout(() => {
+        loader.style.display = 'none';
+        results.style.display = 'block';
+    }, 200);
+    // Prevent default behaviour of form after being submitted:
+    event.preventDefault();
+});
 
 // Calculate results function
-function getResults (event) {
+function getResults () {
     // Get access to entered values from UI:
     const amount = document.querySelector('#amount').value;
     const interest = document.querySelector('#interest').value;
@@ -13,19 +28,15 @@ function getResults (event) {
     const monthlyPaymentOutput = document.querySelector('#monthly-payment');
     const totalPaymentOutput = document.querySelector('#total-payment');
     const totalInterestOutput = document.querySelector('#total-interest');
-
     // Parse string to decimal values:
     const sumOfLoan = parseFloat(amount);
     const interestPerMonth = parseFloat(interest) / (100 * 12);
     const paymentPeriodInMonths = parseFloat(period) * 12;
-
     // Monthly payment calculation:
     const yield = Math.pow(1 + interestPerMonth, paymentPeriodInMonths);
     const monthlyPayment = (sumOfLoan * yield * interestPerMonth) / (yield - 1);
-
     // Total payment calculation:
     const totalPayment = monthlyPayment * paymentPeriodInMonths;
-
     // Total interest calculation:
     const totalInterest = totalPayment - sumOfLoan;
 
@@ -36,10 +47,7 @@ function getResults (event) {
         totalInterestOutput.value = totalInterest.toFixed(2);
     } else {
         showError('Please enter correct data');
-    }
-
-    // Prevent default behaviour of form after being submitted:
-    event.preventDefault();
+    };
 };
 
 // Show error function:
