@@ -23,9 +23,13 @@ function getResults (event) {
     const yield = Math.pow(1 + interestPerMonth, paymentPeriodInMonths);
     const monthlyPayment = (sumOfLoan * yield * interestPerMonth) / (yield - 1);
 
+    // Total payment calculation:
+    const totalPayment = monthlyPayment * paymentPeriodInMonths;
+
     // Check if monthly payment is a finite number:
     if (isFinite(monthlyPayment)) {
         monthlyPaymentOutput.value = monthlyPayment.toFixed(2);
+        totalPaymentOutput.value = totalPayment.toFixed(2);
     }
 
     // Prevent default behaviour of form after being submitted:
