@@ -26,10 +26,14 @@ function getResults (event) {
     // Total payment calculation:
     const totalPayment = monthlyPayment * paymentPeriodInMonths;
 
-    // Check if monthly payment is a finite number:
+    // Total interest calculation:
+    const totalInterest = totalPayment - sumOfLoan;
+
+    // Check if monthly payment is a finite number & show results to user:
     if (isFinite(monthlyPayment)) {
         monthlyPaymentOutput.value = monthlyPayment.toFixed(2);
         totalPaymentOutput.value = totalPayment.toFixed(2);
+        totalInterestOutput.value = totalInterest.toFixed(2);
     }
 
     // Prevent default behaviour of form after being submitted:
