@@ -1,17 +1,22 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Loan calculator</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-  </head>
-  <body class="bg-secondary">
+</head>
+
+<body class="bg-secondary">
     <div class="container">
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div class="card card-body text-center mt-5">
+
+                    <div id="errorDiv"></div>
                     <h1 class="heading display-5 pb-3">Loan Calculator</h1>
                     <form id="calculator-form">
                         <div class="form-group">
@@ -23,17 +28,20 @@
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <span class="input-group-text"> Annual bank interest, %</span>
-                                <input type="number" id="interest" class="form-control" placeholder="Enter the loan rate">
+                                <input type="number" id="interest" class="form-control"
+                                    placeholder="Enter the loan rate">
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="input-group mb-3">
                                 <span class="input-group-text">Loan term</span>
-                                <input type="number" id="period" class="form-control" placeholder="Enter the loan repayment period (years)">
+                                <input type="number" id="period" class="form-control"
+                                    placeholder="Enter the loan repayment period (years)">
                             </div>
                         </div>
                         <div class="form-group mb-4">
-                            <input type="submit" class="btn btn-secondary btn-lg" id="calculate-button" value="Calculate">
+                            <input type="submit" class="btn btn-secondary btn-lg" id="calculate-button"
+                                value="Calculate">
                         </div>
                     </form>
                     <!-- Loader -->
@@ -66,8 +74,11 @@
             </div>
         </div>
     </div>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
     <script src="app.js"></script>
-  </body>
+</body>
+
 </html>
